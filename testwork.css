@@ -1,0 +1,718 @@
+@charset "utf-8";
+/*
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com
+Twitter: @rich_clark
+*/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+body {
+    line-height:1;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+    display:block;
+}
+
+nav ul {
+    list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color:#ff9;
+    color:#000;
+    font-style:italic;
+    font-weight:bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display:block;
+    height:1px;
+    border:0;  
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+body {
+  padding-top: 163.3px;
+  color: #585858;
+  font-family: 'Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3',sans-serif;
+}
+.header {
+  background-color: #ffffff;
+  border-bottom: 4px solid #f5a500;
+  padding-top: 20px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;z-index: 9999;
+}
+.header .bird {
+  width: 90px;
+  display: inline-block;
+  position: absolute;
+  left: 14%;
+  bottom: 0;
+}
+.header_img {
+  text-align: center;
+}
+.header_img img {
+  width: 300px;
+}
+.header ul {
+  display: flex;
+  justify-content: center;
+}
+.header .li_home {
+  border-left: none;
+}
+.header ul li {
+  margin: 50px 0 10px 0;
+  padding-left: 50px;
+  list-style: none;
+  border-left: 1px solid #f5a500;
+  
+}
+.header ul li a {
+  cursor: pointer;
+  text-decoration: none;
+  color: #585858;
+}
+.header ul li a:hover{
+  opacity: 0.7;
+}
+.header ul li + li {
+  margin-left: 50px;
+}
+h1 {
+  text-align: center;
+  padding:70px 0 30px 0;
+  font-size: 28px;
+}
+h2 {
+  text-align: center;
+  padding: 40px 0 40px 0;
+  line-height: 1.5rem;
+}
+h2 span {
+  font-size: 10px;
+}
+#news {
+  background-color: #ffffff;
+  border-bottom: 4px solid #f5a500;
+  position: relative;
+}
+#news .animal {
+  width: 90px;
+  display: inline-block;
+  position: absolute;
+  left: 14%;
+  top: 50px;
+}
+#news h1 {
+  padding:70px 0 30px 0;
+}
+.accordion-area{
+  list-style: none;
+  width: 96%;
+  max-width: 900px;
+  margin:0 auto;
+  margin-bottom: 100px;
+}
+.accordion-area li{
+  margin: 55px 0;
+}
+
+.accordion-area section {
+border: 2px solid #f5a500;
+}
+
+/*アコーディオンタイトル*/
+.title {
+  position: relative;/*+マークの位置基準とするためrelative指定*/
+  cursor: pointer;
+  font-size: 1.3rem;
+  letter-spacing: 0.2rem;
+  font-weight: normal;
+  padding: 3% 3% 3% 50px;
+  transition: all .5s ease;
+}
+
+/*アイコンの＋と×*/
+.title::before,
+.title::after{
+  position: absolute;
+  content:'';
+  width: 15px;
+  height: 2px;
+  background-color: #585858;
+  
+}
+.title::before{
+  top:48%;
+  left: 15px;
+  transform: rotate(0deg);
+  
+}
+.title::after{    
+  top:48%;
+  left: 15px;
+  transform: rotate(90deg);
+
+}
+/* closeというクラスがついたら形状変化 */
+.title.close::before{
+transform: rotate(45deg);
+}
+
+.title.close::after{
+transform: rotate(-45deg);
+}
+
+/*アコーディオンで現れるエリア*/
+.box {
+  display: none;/*はじめは非表示*/
+  background: #ffffff; 
+  /*margin:0 3% 3% 3%;*/
+  padding: 3%;
+  line-height: 50px;
+}
+.box img {
+  display: block;/*はじめは非表示*/
+  margin:0 auto;
+  padding: 0 3% 3% 3%;
+  line-height: 50px;
+  width: 250px;
+}
+
+#home img {
+  width: 100%;
+}
+#access {
+  background: url("https://github.com/tom0123ok/test_sites/blob/main/04-polish-wood.png?raw=true") no-repeat / cover ;
+  border-bottom: 4px solid #f5a500;
+  position: relative;
+}
+#access .pengin {
+  width: 80px;
+  display: inline-block;
+  position: absolute;
+  right: 14%;
+  top: 50px;
+}
+#access ul {
+  display: flex;
+  justify-content: center;
+  margin: 50px 0;
+}
+#access ul li {
+  list-style: none;
+  text-align: center; 
+}
+#access ul li a {
+  text-decoration: none;
+  color: #585858;
+}
+#access ul li .caption p {
+  background-color: #ffffff;
+  display: inline-block;
+  padding: 9px;
+  border-bottom: 1px solid #ffffff;
+}
+#access ul li .caption p:hover {
+  opacity: 0.8;
+  border-bottom: 1px solid #585858;
+  cursor: pointer;
+}
+#access ul .li_1 {
+  border: 5px solid #3b82c4;
+  box-shadow: 8px 8px 10px grey;
+}
+#access ul .li_2 {
+  border: 5px solid #92cb47;
+  box-shadow: 8px 8px 10px grey;
+}
+#access ul li + li {
+margin-left: 50px;
+}
+#access ul li img {
+  width: 500px;              /*px*/
+}
+#access ul li .caption {  
+  font-size: 32px;
+  letter-spacing: 6px;
+  text-indent: 6px;
+} 
+  
+#access ul li .cap_1 {   
+  background: url("https://github.com/tom0123ok/test_sites/blob/main/story_article_bg_01.png?raw=true"); 
+  padding: 80px 0;         
+}
+#access ul li .cap_2 {   
+  background: url("https://github.com/tom0123ok/test_sites/blob/main/story_article_bg_02.png?raw=true"); 
+  padding: 80px 0;         
+}
+#fee {
+  background: url("https://github.com/tom0123ok/test_sites/blob/main/06-white-cardboard.png?raw=true");
+  border-bottom: 4px solid #f5a500;
+  position: relative;
+}
+#fee .musi {
+  width: 80px;
+  display: inline-block;
+  position: absolute;
+  left: 14%;
+  top: 50px;
+}
+#fee img {
+  width: 100%;
+}
+
+#fee .accordion-area{
+  list-style: none;
+  width: 96%;
+  max-width: 900px;
+  margin:0 auto;
+  margin-bottom: 100px;
+}
+#fee .accordion-area p{
+  line-height: 2rem;
+}
+#fee .accordion-area p span{
+  color: rgb(226, 101, 122);
+}
+#fee .accordion-area li{
+  margin: 55px 0;
+  list-style: none;
+}
+
+#fee .accordion-area section {
+border: 2px solid #f5a500;
+}
+
+/*アコーディオンタイトル*/
+#fee .title {
+  position: relative;/*+マークの位置基準とするためrelative指定*/
+  cursor: pointer;
+  font-size: 1.3rem;
+  letter-spacing: 0.2rem;
+  font-weight: normal;
+  padding: 3% 3% 3% 50px;
+  transition: all .5s ease;
+}
+
+/*アイコンの＋と×*/
+#fee .title::before,
+#fee .title::after{
+  position: absolute;
+  content:'';
+  width: 15px;
+  height: 2px;
+  background-color: #585858;
+  
+}
+#fee .title::before{
+  top:48%;
+  left: 15px;
+  transform: rotate(0deg);
+  
+}
+#fee .title::after{    
+  top:48%;
+  left: 15px;
+  transform: rotate(90deg);
+
+}
+/* closeというクラスがついたら形状変化 */
+#fee .title.close::before{
+transform: rotate(45deg);
+}
+
+#fee .title.close::after{
+transform: rotate(-45deg);
+}
+
+/*アコーディオンで現れるエリア*/
+#fee .box {
+    text-align: center;
+    display: block;
+    background: none;
+    padding-bottom: 20px;
+    line-height: 50px;
+    text-align: center;
+}
+#fee .box img {
+  display: block;/*はじめは非表示*/
+  margin:0 auto;
+  padding: 0 3% 3% 3%;
+  line-height: 50px;
+  width: 250px;
+}
+
+#menu {
+  background: url("https://github.com/tom0123ok/test_sites/blob/main/05-white-brick.png?raw=true");
+  border-bottom: 4px solid #f5a500;
+}
+#menu img {
+  width: 100%;
+}
+.header .sp_only {
+  display: none;
+} 
+.footer {
+  text-align: center;
+  padding: 20px 0;
+}
+.footer img {
+  width: 220px;
+}
+@media (max-width: 1250px) {
+  .header .bird {
+    width: 90px;
+    display: inline-block;
+    position: absolute;
+    left: 4%;
+    bottom: 0;
+  }
+
+}
+@media (max-width: 1100px) {
+  #access ul {
+    display: block;
+    margin: 50px 0;
+    width: 60%;
+    margin: 0 auto;
+  }
+  #access ul li {
+    margin-bottom: 80px;
+  }
+  #access ul li img {
+    width: 100%;
+  }
+  #access ul li + li {
+    margin-left: 0;
+  }
+  #access ul li .caption p {
+    background-color: unset;
+  }
+}
+@media (max-width: 1024px) {
+  .header .bird {
+    width: 90px;
+    display: inline-block;
+    position: absolute;
+    left: 4%;
+    bottom: 0;
+  }
+  .header ul li {
+    margin: 30px 0 10px 0;
+    padding-left: 30px;    /* px */
+    list-style: none;
+    border-left: 1px solid #f5a500;
+    
+  }
+  .header ul li + li {
+    margin-left: 30px;    /* px */
+  }
+
+}
+@media (max-width: 768px) {
+  body {
+    padding-top: 127.3px;
+  }
+  .header_img {
+    padding-bottom: 20px;
+  }
+  .header .pc_only {
+    display: none;
+  }
+  .header .sp_only {
+    display: block;
+  }
+  .header ul {
+    display: block;
+  }
+  .header ul li {
+    padding-left: 0;
+  }
+  .header ul li + li {
+    margin-left: 0
+  }
+  #g-nav{
+    /*position:fixed;にし、z-indexの数値を大きくして前面へ*/
+    position:fixed;
+    z-index: 999;
+    /*ナビのスタート位置と形状*/
+	top:0;
+    right: -120%;
+	width:100%;
+    height: 100vh;/*ナビの高さ*/
+	background:#f5a500;
+    /*動き*/
+	transition: all 0.6s;
+}
+
+/*アクティブクラスがついたら位置を0に*/
+#g-nav.panelactive{
+    right: 0;
+}
+
+/*ナビゲーションの縦スクロール*/
+#g-nav.panelactive #g-nav-list{
+    /*ナビの数が増えた場合縦スクロール*/
+    position: fixed;
+    z-index: 999; 
+    width: 100%;
+    height: 100vh;/*表示する高さ*/
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/*ナビゲーション*/
+#g-nav ul {
+    /*ナビゲーション天地中央揃え*/
+    position: absolute;
+    z-index: 999;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+
+/*リストのレイアウト設定*/
+
+#g-nav li{
+	list-style: none;
+    text-align: center;
+}
+
+#g-nav li a{
+	color: #333;
+	text-decoration: none;
+	padding:10px;
+	display: block;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	font-weight: bold;
+}
+
+/*========= ボタンのためのCSS ===============*/
+.openbtn{
+	position:fixed;
+    z-index: 9999;/*ボタンを最前面に*/
+	top:10px;
+	right: 10px;
+	cursor: pointer;
+    width: 50px;
+    height:50px;
+}
+	
+/*×に変化*/	
+.openbtn span{
+    display: inline-block;
+    transition: all .4s;
+    position: absolute;
+    left: 14px;
+    height: 3px;
+    border-radius: 2px;
+	background-color: #666;
+  	width: 45%;
+  }
+
+.openbtn span:nth-of-type(1) {
+	top:15px;	
+}
+
+.openbtn span:nth-of-type(2) {
+	top:23px;
+}
+
+.openbtn span:nth-of-type(3) {
+	top:31px;
+}
+
+.openbtn.active span:nth-of-type(1) {
+    top: 18px;
+    left: 18px;
+    transform: translateY(6px) rotate(-45deg);
+    width: 30%;
+}
+
+.openbtn.active span:nth-of-type(2) {
+	opacity: 0;
+}
+
+.openbtn.active span:nth-of-type(3){
+    top: 30px;
+    left: 18px;
+    transform: translateY(-6px) rotate(45deg);
+    width: 30%;
+}
+#access ul li {
+  margin-bottom: 80px;
+}
+#access ul {
+  width: 75%;
+}
+#news .animal {
+  width: 70px;
+  display: inline-block;
+  position: absolute;
+  left: 7%;
+  top: 50px;
+}
+#access .pengin {
+  width: 70px;
+  display: inline-block;
+  position: absolute;
+  right: 7%;
+  top: 50px;
+  }
+#fee .musi {
+  width: 70px;
+  display: inline-block;
+  position: absolute;
+  left: 7%;
+  top: 50px;
+  }
+}
+@media (max-width: 557px) {
+  body {
+    padding-top: 113.73px;
+  }
+  .header_img img {
+    width: 250px;
+  }
+  .header .bird {
+    width: 70px;
+    left: 4%;
+    bottom: 0;
+  }
+  .title {
+    font-size: 14px;
+  }
+  .accordion-area {
+    width: 87%;
+  }
+  #access ul li .cap_1 {
+    padding: 30px 0;
+  }
+  #access ul li .cap_2 {
+    padding: 30px 0;
+  }
+  #access ul li .caption p {
+    line-height: 3.5rem;
+  }
+  #fee .accordion-area {
+    width: 87%;
+  }
+}
+@media (max-width: 470px) {
+  body {
+    padding-top: 100.19px;
+  }
+  .header .bird {
+    width: 60px;
+    left: 0.7%;
+    bottom: 0;
+  }
+  .header_img img {
+    width: 200px;
+  } 
+  #news .animal {
+    width: 50px;
+    left: 7%;
+    top: 50px;
+  }
+  #access .pengin {
+    width: 50px;
+    right: 7%;
+    top: 50px;
+  }
+  #fee .musi {
+    width: 50px;
+    left: 7%;
+    top: 50px;
+  }
+}
+@media (max-width: 375px) {
+  #access ul {
+    width: 85%;
+  }
+  #fee .title {
+    font-size: 15px;
+  }
+}
+@media (max-width: 320px) {
+  .header .bird {
+    display: none;
+  }
+}
